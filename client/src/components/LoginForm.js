@@ -32,9 +32,7 @@ const LoginForm = () => {
       const response = await LoginUser({
         variables: { ...userFormData }
       });
-
-    
-      
+ 
       console.log(response.data.login.user);
       Auth.login(response.data.login.token);
     } catch (err) {
