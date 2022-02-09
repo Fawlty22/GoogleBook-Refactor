@@ -42,8 +42,7 @@ const resolvers = {
         { _id: context.user._id },
         { $addToSet: { savedBooks: book } },
         { new: true, runValidators: true }
-      )
-      .populate('savedBooks');
+      );
       return updatedUser;
     },
     removeBook: async (parent, { bookId }, context) => {
